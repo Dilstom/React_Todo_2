@@ -9,6 +9,13 @@ class App extends React.Component {
    list: ['learn react', 'clean table'],
   };
  }
+
+ handleChange = e => {
+  e.preventDefault();
+  this.setState({ message: e.target.value });
+  //   console.log('this state message: ', this.state.message);
+ };
+
   render() {
     return (
       <div>
