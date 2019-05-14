@@ -12,7 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+    <TodoForm
+     onChangeProps={this.handleChange}
+     onclickProps={this.handleSubmit}
+    />
       </div>
     );
   }
