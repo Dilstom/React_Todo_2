@@ -16,6 +16,14 @@ class App extends React.Component {
   //   console.log('this state message: ', this.state.message);
  };
 
+ handleSubmit = e => {
+  //   e.preventDefault();
+  const newList = this.state.list.slice();
+  //   console.log(newList);
+  newList.push(this.state.message);
+  this.setState({ list: newList, message: '' });
+ };
+
   render() {
     return (
       <div>
