@@ -29,6 +29,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+    <h2>{this.state.title}</h2>
+    <TodoList listProps={this.state.list} />
     <TodoForm
      onChangeProps={this.handleChange}
      onclickProps={this.handleSubmit}
