@@ -26,18 +26,18 @@ class App extends React.Component {
   this.setState({ list: newList, message: '' });
  };
 
-  render() {
-    return (
-      <div>
+ render() {
+  return (
+   <div>
     <h2>{this.state.title}</h2>
     <TodoList listProps={this.state.list} />
     <TodoForm
      onChangeProps={this.handleChange}
      onclickProps={this.handleSubmit}
     />
-      </div>
-    );
-  }
+   </div>
+  );
+ }
 }
 
 export default App;
