@@ -23,7 +23,8 @@ class App extends React.Component {
   const newList = this.state.list.slice();
   //   console.log(newList);
   newList.push(this.state.message);
-  this.setState({ list: newList, message: '' });
+  this.setState({ list: newList });
+  //   this.setState({ list: newList, message: '' }); // doesn't work
  };
 
  render() {

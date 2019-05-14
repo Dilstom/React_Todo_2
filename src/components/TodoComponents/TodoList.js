@@ -4,7 +4,7 @@ import React from 'react';
 import Todo from './Todo';
 
 const TodoList = props => {
- console.log('props in todolist: ', props);
+ //  console.log('props in todolist: ', props);
  return (
   <div>
    {props.listProps.map((item, i) => (
