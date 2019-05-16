@@ -40,15 +40,27 @@ class App extends React.Component {
   //   this.setState({ list: newList });
   this.setState({ list: newList, message: '' }); // doesn't work
  };
+
+ toggleFlag = id => {
+  const newList = this.state.list.map(item => {
+   if (item.id === id) {
+    item.completed = !item.completed;
+    return item;
+   }
+   return item;
+  });
   this.setState({ list: newList });
-  //   this.setState({ list: newList, message: '' }); // doesn't work
+  console.log(this.state.list);
  };
+ //  clearCompleted = () => {
+
+ //  }
 
  render() {
   return (
    <div>
     <h2>{this.state.title}</h2>
-    <TodoList listProps={this.state.list} />
+    <TodoList listProps={this.state.list} toggleProps={this.toggleFlag} />
     <TodoForm
      onChangeProps={this.handleChange}
      onclickProps={this.handleSubmit}
