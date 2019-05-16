@@ -52,9 +52,13 @@ class App extends React.Component {
   this.setState({ list: newList });
   console.log(this.state.list);
  };
- //  clearCompleted = () => {
 
- //  }
+ clearCompleted = () => {
+  let newList = this.state.list.slice();
+  newList = newList.filter(item => item.completed === false);
+  console.log(newList);
+  this.setState({ list: newList });
+ };
 
  render() {
   return (
@@ -64,6 +68,7 @@ class App extends React.Component {
     <TodoForm
      onChangeProps={this.handleChange}
      onclickProps={this.handleSubmit}
+     clearProps={this.clearCompleted}
     />
    </div>
   );
