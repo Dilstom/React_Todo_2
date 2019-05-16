@@ -31,14 +31,18 @@ class App extends React.Component {
 
  handleSubmit = e => {
   const newList = this.state.list.slice();
-  const newObject = {
-   task: this.state.message,
-   id: Date.now(),
-   completed: false,
-  };
-  newList.push(newObject);
-  //   this.setState({ list: newList });
-  this.setState({ list: newList, message: '' }); // doesn't work
+  if (this.state.message === '') {
+   return;
+  } else {
+   const newObject = {
+    task: this.state.message,
+    id: Date.now(),
+    completed: false,
+   };
+   newList.push(newObject);
+   //   this.setState({ list: newList });
+   this.setState({ list: newList, message: '' }); // doesn't work
+  }
  };
 
  toggleFlag = id => {
