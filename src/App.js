@@ -8,7 +8,18 @@ class App extends React.Component {
   this.state = {
    title: 'Todo List: MVP',
    message: '',
-   list: ['learn react', 'clean table'],
+   list: [
+    {
+     task: 'Organize Garage',
+     id: 1528817077286,
+     completed: false,
+    },
+    {
+     task: 'Bake Cookies',
+     id: 1528817084358,
+     completed: false,
+    },
+   ],
   };
  }
 
@@ -19,10 +30,16 @@ class App extends React.Component {
  };
 
  handleSubmit = e => {
-  //   e.preventDefault();
   const newList = this.state.list.slice();
-  //   console.log(newList);
-  newList.push(this.state.message);
+  const newObject = {
+   task: this.state.message,
+   id: Date.now(),
+   completed: false,
+  };
+  newList.push(newObject);
+  //   this.setState({ list: newList });
+  this.setState({ list: newList, message: '' }); // doesn't work
+ };
   this.setState({ list: newList });
   //   this.setState({ list: newList, message: '' }); // doesn't work
  };
