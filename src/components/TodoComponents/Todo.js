@@ -1,8 +1,13 @@
 import React from 'react';
+import './Todo.css';
 
 const Todo = props => {
  //  console.log('props in todo: ', props);
- return <div>{props.item}</div>;
+ return (
+  <div className={`${props.item.completed ? null : 'line'}`}>
+   {props.item.task}
+  </div>
+ );
 };
 
 export default Todo;
