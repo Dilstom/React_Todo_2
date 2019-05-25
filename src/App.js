@@ -26,10 +26,11 @@ class App extends React.Component {
  handleChange = e => {
   e.preventDefault();
   this.setState({ message: e.target.value });
-  //   console.log('this state message: ', this.state.message);
+  console.log('this state message: ', this.state.message);
  };
 
  handleSubmit = e => {
+  e.preventDefault();
   const newList = this.state.list.slice();
   if (this.state.message === '') {
    return;
@@ -70,6 +71,7 @@ class App extends React.Component {
     <h2>{this.state.title}</h2>
     <TodoList listProps={this.state.list} toggleProps={this.toggleFlag} />
     <TodoForm
+     message={this.state.message}
      onChangeProps={this.handleChange}
      onclickProps={this.handleSubmit}
      clearProps={this.clearCompleted}
